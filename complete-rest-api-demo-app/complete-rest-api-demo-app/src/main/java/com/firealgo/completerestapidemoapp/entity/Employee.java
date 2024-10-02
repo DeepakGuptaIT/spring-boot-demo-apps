@@ -1,12 +1,8 @@
 package com.firealgo.completerestapidemoapp.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
+
+import jakarta.persistence.*;
 import lombok.Data;
 
 
@@ -32,4 +28,13 @@ public class Employee {
 	@Column(name="sal")
 	int salary;
 
+	public Employee(String firstName, String lastName, String email, int salary) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.salary = salary;
+	}
+
+	public Employee() {
+	}
 }

@@ -19,9 +19,8 @@ import com.firealgo.completerestapidemoapp.service.EmployeeService;
 @RequestMapping("/api")
 public class EmployeeRestController {
 
-	private EmployeeService employeeService;
-	
-	@Autowired
+	private final EmployeeService employeeService;
+
 	public EmployeeRestController(EmployeeService theEmployeeService) {
 		employeeService = theEmployeeService;
 	}
@@ -83,7 +82,6 @@ public class EmployeeRestController {
 		if (tempEmployee == null) {
 			throw new RuntimeException("Employee id not found - " + employeeId);
 		}
-		
 		employeeService.deleteById(employeeId);
 		
 		return "Deleted employee id - " + employeeId;

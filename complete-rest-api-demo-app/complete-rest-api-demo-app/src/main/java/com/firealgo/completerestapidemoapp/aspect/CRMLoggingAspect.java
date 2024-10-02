@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class CRMLoggingAspect {
 
 	// setup logger
-	private Logger myLogger = Logger.getLogger(getClass().getName());
+	private final Logger myLogger = Logger.getLogger(getClass().getName());
 
 	// setup pointcut declarations
 	@Pointcut("execution(* com.firealgo.completerestapidemoapp.rest.*.*(..))")
